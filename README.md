@@ -1,1 +1,1 @@
-# datacite
+# Manage DataCite DOIs
