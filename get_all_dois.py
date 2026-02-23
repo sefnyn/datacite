@@ -12,7 +12,7 @@ print('Writing to file...')
 fh.write(response.text)
 
 print('Getting next page...')
-next = response('links')['next']
+next = "https://api.datacite.org/dois?prefix=10.15128&page[number]=2&page[size]=1000"
 response = requests.get(next, headers=headers)
 fh = open (out, 'a')
 fh.write(response.text)
