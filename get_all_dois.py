@@ -9,4 +9,4 @@ headers = {"accept": "text/csv"}
 response = requests.get(url, headers=headers)
 
 print('Writing to file')
-fh.write(str(response))
+fh.write(response.text)
