@@ -12,7 +12,7 @@ print('Writing to file...')
 fh.write(response.text)
 
 print('Getting next page...')
-next = response.json()['links']['next']
+next = response['data']['links']['next']
 response = requests.get(next, headers=headers)
 fh = open (out, 'a')
 fh.write(response.text)
