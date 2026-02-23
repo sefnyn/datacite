@@ -13,6 +13,6 @@ fh.write(response.text)
 fh = open (out, 'a')
 
 print('Getting next page...')
-next = response.links.next
+next = response.links{'next'}
 response = requests.get(next, headers=headers)
 fh.write(response.text)
