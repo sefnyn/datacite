@@ -3,10 +3,10 @@ out = 'dois.csv'
 fh = open (out, 'w')
 
 url = "https://api.datacite.org/dois?prefix=10.15128&fields[dois]=creators,titles&page[size]=1000000"
-
 headers = {"accept": "text/csv"}
 
+print('Getting metadata from DataCite...')
 response = requests.get(url, headers=headers)
 
-print('Writing to file')
+print('Writing to file...')
 fh.write(response.text)
