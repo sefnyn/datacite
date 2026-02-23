@@ -1,8 +1,8 @@
 import requests
 
-url = "https://api.test.datacite.org/dois"
+url = "https://api.datacite.org/dois?prefix=10.15128?fields[dois]=titles&page[size]=10000&sort=name"
 
-headers = {"accept": "application/vnd.api+json"}
+headers = {"accept": "text/csv"}
 
 response = requests.get(url, headers=headers)
 
