@@ -12,7 +12,10 @@ print('Writing to file...')
 fh.write(response.text)
 
 print('Getting next page...')
+print(response)
+"""
 next = response.links.next
 response = requests.get(next, headers=headers)
 fh = open (out, 'a')
 fh.write(response.text)
+"""
