@@ -11,9 +11,10 @@ response = requests.get(url, headers=headers)
 print('Writing to file...')
 fh.write(response.text)
 
+"""
 print('Getting next page...')
 print(response.meta)
-"""
+
 next = response.links.next
 response = requests.get(next, headers=headers)
 fh = open (out, 'a')
