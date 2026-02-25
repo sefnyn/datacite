@@ -7,14 +7,14 @@ fh2 = open (json, 'w')
 #get csv data
 url = "https://api.datacite.org/dois?prefix=10.15128&page[size]=1000&sort=name"
 headers = {"accept": "text/csv"}
-print('Getting metadata from DataCite...')
+print('Getting CSV metadata from DataCite...')
 response = requests.get(url, headers=headers)
 print('Writing to file...')
 fh1.write(response.text)
 
 #get json data
-headers = {"accept": "application/vnd.api+json"]
-print('Getting metadata from DataCite...')
+headers = {"accept": "application/vnd.api+json"}
+print('Getting JSON metadata from DataCite...')
 response = requests.get(url, headers=headers)
 print('Writing to file...')
 fh2.write(response.text)
