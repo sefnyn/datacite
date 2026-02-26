@@ -14,7 +14,7 @@ for rec in data:
     url = rec['attributes']['url']
     f = url.find('collections.durham.ac.uk')
     if f > 0:
-        print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
+#        print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
         fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
     else:
         print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
