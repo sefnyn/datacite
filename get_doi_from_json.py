@@ -11,5 +11,5 @@ response = requests.get(url, headers=headers)
 #read json data
 data = response.json()['data']
 for rec in data:
-    print(rec['id'] + "," + str(rec['publicationYear']))
-    fh.write(rec['id'] + "," + str(rec['publicationYear']) + "\n")
+    print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
+    fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
