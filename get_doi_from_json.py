@@ -10,5 +10,5 @@ response = requests.get(url, headers=headers)
 
 #read json data
 data = response.json()['data']
-first_doi = data[0]['id']
-print(first_doi)
+for rec in data:
+    print(rec['id'])
