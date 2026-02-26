@@ -11,5 +11,11 @@ response = requests.get(url, headers=headers)
 #read json data
 data = response.json()['data']
 for rec in data:
-    print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
-    fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
+    url = rec['attributes']['url']
+    f = url.find('collections.durham.ac.uk')
+    if f > 0:
+        print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
+        fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
+    else:
+        print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
+        fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
