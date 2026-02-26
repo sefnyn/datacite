@@ -1,6 +1,6 @@
 import requests
-#json = 'dois.json'
-#fh2 = open (json, 'w')
+dois = 'dois.txt'
+fh = open (dois, 'w')
 url = "https://api.datacite.org/dois?prefix=10.15128&page[size]=1000&sort=name"
 
 #get json data
@@ -12,3 +12,4 @@ response = requests.get(url, headers=headers)
 data = response.json()['data']
 for rec in data:
     print(rec['id'])
+    fh.write(rec['id'])
