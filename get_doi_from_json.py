@@ -12,4 +12,4 @@ response = requests.get(url, headers=headers)
 data = response.json()['data']
 for rec in data:
     print(rec['id'])
-    fh.write(rec['id'])
+    fh.write(rec['id'] + "\n")
