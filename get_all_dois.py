@@ -3,9 +3,9 @@ csv = 'dois.csv'
 json = 'dois.json'
 fh1 = open (csv, 'w')
 fh2 = open (json, 'w')
+url = "https://api.datacite.org/dois?prefix=10.15128&page[size]=1000&sort=name"
 
 #get csv data
-url = "https://api.datacite.org/dois?prefix=10.15128&page[size]=1000&sort=name"
 headers = {"accept": "text/csv"}
 print('Getting CSV metadata from DataCite...')
 response = requests.get(url, headers=headers)
