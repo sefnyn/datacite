@@ -24,7 +24,7 @@ def get_dois(prefix):
         else:
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
-    print("Created new file " + dois)        
+    print("Created new file: " + dois)        
     print("Found {0} DOIs with prefix {1}".format(num, prefix))
 
 def main():
