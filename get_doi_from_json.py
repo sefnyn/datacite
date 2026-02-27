@@ -7,10 +7,11 @@ def get_dois(prefix):
 
     #get json data
     headers = {"accept": "application/vnd.api+json"}
-    print('Getting JSON metadata from DataCite...')
+    print("Getting JSON metadata from DataCite...")
     response = requests.get(url, headers=headers)
 
     #read json data
+    print("Reading JSON metadata...")
     num = 0
     data = response.json()['data']
     for rec in data:
@@ -23,6 +24,7 @@ def get_dois(prefix):
         else:
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
+    print("Created new file " + dois)        
     print("Found {0} DOIs with prefix {1}".format(num, prefix))
 
 def main():
