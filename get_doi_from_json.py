@@ -17,5 +17,5 @@ for rec in data:
 #        print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
         fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
     else:
-        print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
+        print(rec['id'] + " " + str(rec['attributes']['publicationYear']) + " " + rec['attributes']['url'])
         fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
