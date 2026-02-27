@@ -1,4 +1,5 @@
 import requests
+import getpass
 payload =
 {
     "data": {
@@ -21,3 +22,8 @@ def test_update(doi):
     response = requests.put(rest_api, json=payload, headers=headers)
 
 
+    
+    # Get password
+    pwd = getpass.getpass(prompt="Enter MDS password (N.B.: you will *not* see any input as you type): ", stream=None)
+    if not pwd:
+        raise CancelledError()
