@@ -23,7 +23,7 @@ def get_dois(prefix):
         else:
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
-    print("Found {num} DOIs with prefix {prefix}")
+    print("Found {num} DOIs with prefix {prefix}".format(num, prefix)
 
 def main():
     try:
