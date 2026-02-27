@@ -15,7 +15,8 @@ def test_update(doi):
     headers = 
     {
         "accept" : "application/vnd.api+json",
-        "content-type": "application/json"
+        "content-type": "application/json",
+        "authorization": "Basic" + "encrypted_creds"
     }  
     response = requests.put(rest_api, json=payload, headers=headers)
 
