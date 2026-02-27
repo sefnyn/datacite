@@ -9,7 +9,7 @@ Output files are:  dois.csv | dois.json
 This script retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON data is read, parsed and analysed.
 
 For example:
-> source ./bin/activate   # activate virtual environment
+> source ./bin/activate   # activate virtual environment  
 > python3 get_doi_from_json.py 10.15128  
 > Getting JSON metadata from DataCite...  
 > Reading JSON metadata...  
