@@ -19,11 +19,22 @@ def test_update(doi):
         "content-type": "application/json",
         "authorization": "Basic" + "encrypted_creds"
     }  
-    response = requests.put(rest_api, json=payload, headers=headers)
-
-
-    
     # Get password
-    pwd = getpass.getpass(prompt="Enter MDS password (N.B.: you will *not* see any input as you type): ", stream=None)
-    if not pwd:
+    pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
+    print(pwd)
+"""    if not pwd:
         raise CancelledError()
+    update url
+    update headers
+    response = requests.put(rest_api, json=payload, headers=headers)
+"""    
+
+def main():
+    try:
+        test_update(sys.argv[1])
+    except IndexError:
+        print("Usage:\n", sys.argv[0], "DOI")
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main())
