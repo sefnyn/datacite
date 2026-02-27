@@ -1,7 +1,7 @@
 # Manage DataCite DOIs
 
 ## get_all_dois.py [PREFIX]
-This script attempts to retrieve all, findable DOIs with prefix *PREFIX* and exports the results in CSV format.  This script does not currently work because the DataCite API has a bug.
+This script attempts to retrieve all, findable DOIs with prefix *PREFIX* and exports the results in CSV format.  This script does not currently work because the DataCite API has a bug; namely, the API returns 319 DOIs and then suddenly stops.
 
 ## get_doi_from_json.py [PREFIX]
-
+This script retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON data is read and parsed.
