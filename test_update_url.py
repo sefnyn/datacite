@@ -23,7 +23,7 @@ def test_update(doi, url):
     payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
     print(response.text)
-    print(response.status)
+    print(response)
 
 def main():
     try:
