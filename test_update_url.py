@@ -1,7 +1,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import getpass
-import urllib.parse
+from urllib.parse import quote
 payload = {
     "data": {
         "type": "dois",
