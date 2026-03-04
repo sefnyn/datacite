@@ -12,7 +12,7 @@ payload = {
 
 def test_update(doi, url):
     rest_api = "https://api.test.datacite.org/dois/" + doi
-    user = "uzah"
+    user = "bl.durham"
     headers = {
         "accept" : "application/vnd.api+json",
         "content-type": "application/json",
