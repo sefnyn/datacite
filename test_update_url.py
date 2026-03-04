@@ -22,7 +22,7 @@ def test_update(doi, url):
     pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
 #    print(pwd)
     basic = HTTPBasicAuth(user, pwd)
-    payload['attributes']['url'] = url
+    payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
     print(response)
 
