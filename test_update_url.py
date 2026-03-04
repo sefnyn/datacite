@@ -1,4 +1,5 @@
 import requests
+from requests.auth import HTTPBasicAuth
 import getpass
 payload = {
     "data": {
