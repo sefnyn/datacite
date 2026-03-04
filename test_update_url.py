@@ -1,7 +1,6 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import getpass
-from urllib.parse import quote
 payload = {
     "data": {
         "type": "dois",
@@ -23,9 +22,9 @@ def test_update(doi, url):
     pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
 #    print(pwd)
     basic = HTTPBasicAuth(user, pwd)
-    payload['data']['attributes']['url'] = quote(url)
+    payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
-    print(response)
+    print(response.text)
 
 def main():
     try:
