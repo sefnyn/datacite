@@ -16,11 +16,9 @@ def test_update(doi, url):
     headers = {
         "accept" : "application/vnd.api+json",
         "content-type": "application/json",
-#        "authorization": "Basic" + "encrypted_creds"
     }  
     # Get password
     pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
-#    print(pwd)
     basic = HTTPBasicAuth(user, pwd)
     payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
@@ -30,7 +28,7 @@ def main():
     try:
         test_update(sys.argv[1], sys.argv[2])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "DOI  URL")
+        print("Usage:\n", sys.argv[0], "SHORT_DOI  URL")
 
 if __name__ == "__main__":
     import sys
