@@ -4,8 +4,8 @@ import getpass
 payload = {
     "data": {
         "type": "dois",
-    "attributes": {
-        "url": "https://example.org"
+        "attributes": {
+            "url": "https://example.org"
     }
   }
 }
