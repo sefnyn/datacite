@@ -27,7 +27,7 @@ def test_update(pwd, doi, url):
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
     try:
         d = response.json()['data']
-        print("Success.  Updated landing page for DOI " + doi)
+        print("Success.  Updated landing page for DOI " + doi + " to " + url)
     except KeyError:
         e = response.json()['errors']
         print(response.text)
