@@ -15,3 +15,13 @@ For example:
 > Reading JSON metadata...  
 > Created new file: dois.txt  
 > Found 617 DOIs with prefix 10.15128  
+
+## test_update_landing_page.py [SHORT_DOI] [LANDING_PAGE]
+This script updates the landing page for exactly one DOI by calling the DataCite Test API
+
+For example:
+> python3 test_update_landing_page.py 10.4124/R90R967372K https://collections-test.durham.ac.uk/files/r90r967372k
+> Enter password for DataCite user (N.B.: you will *not* see any input as you type):  
+> Success.  Updated landing page for DOI 10.4124/R90R967372K
+
+
