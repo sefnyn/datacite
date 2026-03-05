@@ -23,13 +23,14 @@ def test_update(doi, url):
     payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
     try:
-        d = response['data']
+        d = response.json()['data']
         print(response.text)
     except NameError:
-        e = response['errors']
-        print('An error occurred while updating the landing page')
-        print(e['status'])
-        print(e['title'])
+        e = response.json()['errors']
+        print(response.text)
+#        print('An error occurred while updating the landing page')
+#        print(e['status'])
+#        print(e['title'])
 
 def main():
     try:
@@ -40,14 +41,3 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main())
-
-
-
-{
-  "errors": [
-    {
-      "status": "404",
-      "title": "The resource you are looking for doesn't exist."
-    }
-  ]
-}
