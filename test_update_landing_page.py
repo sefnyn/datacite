@@ -37,7 +37,7 @@ def main():
     try:
         test_update(sys.argv[1], sys.argv[2])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "SHORT_DOI  URL")
+        print("Usage:\n", sys.argv[0], "SHORT_DOI  LANDING_PAGE")
 
 if __name__ == "__main__":
     import sys
