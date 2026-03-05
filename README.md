@@ -11,10 +11,9 @@ This script retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON da
 For example:
 > source ./bin/activate   # activate virtual environment  
 > python3 get_doi_from_json.py 10.15128  
-> Getting JSON metadata from DataCite...  
-> Reading JSON metadata...  
-> Created new file: dois.txt  
-> Found 617 DOIs with prefix 10.15128  
+> Found 618 DOIs with prefix 10.15128  
+> Created new file with 608 DOIs that resolve to collections server: dois_resolve2collections.txt  
+> Created new file with 10 DOIs that resolve elsewhere: dois_resolve_elsewhere.txt  
 
 ## test_update_landing_page.py [SHORT_DOI] [LANDING_PAGE]
 This script updates the landing page for exactly one DOI by calling the DataCite Test API
