@@ -25,7 +25,7 @@ def test_update(doi, url):
     try:
         d = response.json()['data']
         print(response.text)
-    except NameError:
+    except KeyError:
         e = response.json()['errors']
         print(response.text)
 #        print('An error occurred while updating the landing page')
