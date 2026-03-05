@@ -8,6 +8,7 @@ test_update_landing_page.test_update([SHORT_DOI], [LANDING_PAGE])
 import test_update_landing_page
 
 def update_landing_pages(dois, lp_prefix):
+    fh = open(dois)
     
 
 
@@ -15,7 +16,7 @@ def main():
     try:
         update_landing_pages(sys.argv[1], sys.argv[2])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "[FILE_CONTAINING_SHORT_DOIS] [LANDING_PAGE_PREFIX]")
+        print("Usage:\n", sys.argv[0], "[FILE_CONTAINING_SHORT_DOIS] [NEW_LANDING_PAGE_WITHOUT_RECORD_ID]")
 
 if __name__ == "__main__":
     import sys
