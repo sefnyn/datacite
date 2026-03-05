@@ -23,4 +23,13 @@ For example:
 > Enter password for DataCite user (N.B.: you will *not* see any input as you type):  
 > Success.  Updated landing page for DOI 10.4124/R90R967372K  
 
+## test_batch_lp_update.py [FILE_CONTAINING_SHORT_DOIS] [NEW_LANDING_PAGE_WITHOUT_RECORD_ID]
+This script updates the landing pages for a batch of DOIs by calling the DataCite **test** API
+
+For example:
+> python3 test_batch_lp_update.py testdoi.txt http://example.com  
+> Enter password for DataCite user (N.B.: you will *not* see any input as you type):   
+> Success.  Updated landing page for DOI 10.4124/r90r967372k  
+> Success.  Updated landing page for DOI 10.4124/R09W6634360C  
+> Success.  Updated landing page for DOI 10.4124/R9ZP38WC60C  
 
