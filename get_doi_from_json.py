@@ -14,21 +14,24 @@ def get_dois(prefix):
 
     #read json data
     print("Reading JSON metadata...")
-    num = 0
+    collections_count = 0
+    other_count = 0
     data = response.json()['data']
     for rec in data:
-        num += 1
         url = rec['attributes']['url']
         f = url.find('collections.durham.ac.uk')
         if f > 0:
+            collections_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
             fh.write(rec['id'] + "\n")
         else:
+            other_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh2.write(rec['id'] + "," + rec['attributes']['url'] + "\n")
-    print("Created new file with DOIs that resolve to collections server: " + dois)
-    print("Created new file with DOIs that resolve elsewhere: " + other)
-    print("Found {0} DOIs with prefix {1}".format(num, prefix))
+    print("Found {0} DOIs with prefix {1}".format(collections_count + other_count, prefix))
+    print("Created new file with " + str(collections_count) + " DOIs that resolve to collections server: " + dois)
+    print("Created new file with " + str(other_count) + " DOIs that resolve elsewhere: " + other)
+
 
 def main():
     try:
