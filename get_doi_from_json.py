@@ -1,8 +1,10 @@
 import requests
 
 def get_dois(prefix):
-    dois = 'dois.txt'
-    fh = open (dois, 'w')
+    dois = 'dois_resolve2collections.txt'
+    fh = open(dois, 'w')
+    other = 'dois_resolve_elsewhere.txt'
+    fh2 = open(other, 'w')
     url = "https://api.datacite.org/dois?prefix=" + prefix + "&page[size]=1000&sort=name"
 
     #get json data
@@ -20,11 +22,12 @@ def get_dois(prefix):
         f = url.find('collections.durham.ac.uk')
         if f > 0:
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
-            fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "\n")
+            fh.write(rec['id'] + "\n")
         else:
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
-            fh.write(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'] + "\n")
-    print("Created new file: " + dois)        
+            fh2.write(rec['id'] + "," + rec['attributes']['url'] + "\n")
+    print("Created new file with DOIs that resolve to collections server: " + dois)
+    print("Created new file with DOIs that resolve elsewhere: " + other)
     print("Found {0} DOIs with prefix {1}".format(num, prefix))
 
 def main():
