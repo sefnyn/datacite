@@ -1,3 +1,8 @@
+"""
+Usage:
+ test_update_landing_page.py [SHORT_DOI] [LANDING_PAGE]
+"""
+
 import requests
 from requests.auth import HTTPBasicAuth
 import getpass
@@ -37,7 +42,7 @@ def main():
     try:
         test_update(sys.argv[1], sys.argv[2])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "SHORT_DOI  LANDING_PAGE")
+        print("Usage:\n", sys.argv[0], "[SHORT_DOI] [LANDING_PAGE]")
 
 if __name__ == "__main__":
     import sys
