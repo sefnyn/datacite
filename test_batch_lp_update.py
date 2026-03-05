@@ -6,6 +6,7 @@ test_update_landing_page.test_update([SHORT_DOI], [LANDING_PAGE])
 """
 
 import test_update_landing_page
+import getpass
 
 def update_landing_pages(dois, new_lp):
     # Get password
