@@ -15,16 +15,14 @@ payload = {
   }
 }
 
-def test_update(doi, url):
-    rest_api = "https://api.test.datacite.org/dois/" + doi
+def test_update(pwd, doi, url):
     user = "bl.durham"
+    basic = HTTPBasicAuth(user, pwd)
+    rest_api = "https://api.test.datacite.org/dois/" + doi
     headers = {
         "accept" : "application/vnd.api+json",
         "content-type": "application/json",
     }  
-    # Get password
-    pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
-    basic = HTTPBasicAuth(user, pwd)
     payload['data']['attributes']['url'] = url
     response = requests.put(rest_api, json=payload, headers=headers, auth=basic)
     try:
@@ -34,13 +32,12 @@ def test_update(doi, url):
         e = response.json()['errors']
         print(response.text)
         print("Did not update DOI " + doi)
-#        print('An error occurred while updating the landing page')
-#        print(e['status'])
-#        print(e['title'])
 
 def main():
+    # Get password
+    pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
     try:
-        test_update(sys.argv[1], sys.argv[2])
+        test_update(pwd, sys.argv[1], sys.argv[2])
     except IndexError:
         print("Usage:\n", sys.argv[0], "[SHORT_DOI] [LANDING_PAGE]")
 
