@@ -14,7 +14,6 @@ def update_landing_pages(dois, new_lp):
     fh = open(dois)
     for doi in fh:
         doi = doi.rstrip()
-        print(doi)
         test_update_landing_page.test_update(pwd, doi, new_lp)
 
 
