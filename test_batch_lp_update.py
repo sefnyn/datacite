@@ -8,11 +8,13 @@ test_update_landing_page.test_update([SHORT_DOI], [LANDING_PAGE])
 import test_update_landing_page
 
 def update_landing_pages(dois, new_lp):
+    # Get password
+    pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
     fh = open(dois)
     for doi in fh:
         doi = doi.rstrip()
         print(doi)
-        test_update_landing_page.test_update(doi, new_lp)
+        test_update_landing_page.test_update(pwd, doi, new_lp)
 
 
 def main():
