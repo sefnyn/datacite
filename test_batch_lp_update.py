@@ -14,7 +14,7 @@ def update_landing_pages(dois, server):
     fh = open(dois)
     for doi in fh:
         doi = doi.rstrip()
-        parts = doi.strip("/")
+        parts = doi.split("/")
         prefix = parts[0]
         suffix = parts[1]
         new_lp = server + "/files/" + suffix
