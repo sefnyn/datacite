@@ -6,7 +6,7 @@ This script attempts to retrieve all, findable DOIs with prefix *PREFIX* and exp
 Output files are:  dois.csv | dois.json
 
 ## get_doi_from_json.py [PREFIX]
-This script calls the **production** DataCite API and retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON data is read, parsed and analysed.
+This script calls the DataCite **production** API and retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON data is read, parsed and analysed.
 
 For example:
 > source ./bin/activate   # activate virtual environment  
@@ -16,7 +16,7 @@ For example:
 > Created new file with 10 DOIs that resolve elsewhere: dois_resolve_elsewhere.txt  
 
 ## test_update_landing_page.py [SHORT_DOI] [LANDING_PAGE]
-This script updates the landing page for exactly one DOI by calling the DataCite **Test** API
+This script updates the landing page for exactly one DOI by calling the DataCite **test** API
 
 For example:
 > python3 test_update_landing_page.py 10.4124/R90R967372K https://collections-test.durham.ac.uk/files/r90r967372k  
