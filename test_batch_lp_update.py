@@ -7,9 +7,12 @@ test_update_landing_page.test_update([SHORT_DOI], [LANDING_PAGE])
 
 import test_update_landing_page
 
-def update_landing_pages(dois, lp_prefix):
+def update_landing_pages(dois, new_lp):
     fh = open(dois)
-    
+    for doi in fh:
+        doi = doi.rstrip()
+        print(doi)
+        test_update_landing_page.test_update(doi, new_lp)
 
 
 def main():
