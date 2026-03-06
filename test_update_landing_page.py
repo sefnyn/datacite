@@ -34,7 +34,7 @@ def test_update(user, pwd, doi, url):
 
 def main():
     # Get password
-    pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
+    pwd = getpass.getpass(prompt="Enter password for user " + sys.argv[1] + " (N.B.: you will *not* see any input as you type): ", stream=None)
     try:
         test_update(sys.argv[1], pwd, sys.argv[2], sys.argv[3])
     except IndexError:
