@@ -15,8 +15,7 @@ payload = {
   }
 }
 
-def test_update(pwd, doi, url):
-    user = "bl.durham"
+def test_update(user, pwd, doi, url):
     basic = HTTPBasicAuth(user, pwd)
     rest_api = "https://api.test.datacite.org/dois/" + doi
     headers = {
@@ -37,9 +36,9 @@ def main():
     # Get password
     pwd = getpass.getpass(prompt="Enter password for DataCite user (N.B.: you will *not* see any input as you type): ", stream=None)
     try:
-        test_update(pwd, sys.argv[1], sys.argv[2])
+        test_update(sys.argv[1], pwd, sys.argv[2], sys.argv[3])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "[SHORT_DOI] [LANDING_PAGE]")
+        print("Usage:\n", sys.argv[0], "[DATACITE_USER] [SHORT_DOI] [LANDING_PAGE]")
 
 if __name__ == "__main__":
     import sys
