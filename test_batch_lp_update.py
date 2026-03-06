@@ -10,7 +10,7 @@ import getpass
 
 def update_landing_pages(user, dois, server):
     # Get password
-    pwd = getpass.getpass(prompt="Enter password for user " + user " + " (N.B.: you will *not* see any input as you type): ", stream=None)
+    pwd = getpass.getpass(prompt="Enter password for user " + user + " (N.B.: you will *not* see any input as you type): ", stream=None)
     fh = open(dois)
     for doi in fh:
         doi = doi.rstrip()
