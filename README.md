@@ -33,7 +33,7 @@ For example:
 > Success.  Updated landing page for DOI 10.4124/R09W6634360C to https://example.com/files/R09W6634360C  
 > Success.  Updated landing page for DOI 10.4124/R9ZP38WC60C to https://example.com/files/R9ZP38WC60C  
 
-The input file contains three lines:
+The input file **testdoi.txt** contains three lines:
 $ cat testdoi.txt  
 10.4124/r90r967372k  
 10.4124/R09W6634360C  
