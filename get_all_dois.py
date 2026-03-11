@@ -13,6 +13,7 @@ def get_dois(prefix):
     response = requests.get(url, headers=headers)
     print('Writing to file...')
     fh1.write(response.text)
+    print('Created file: ' + csv)
 
     #get json data
     headers = {"accept": "application/vnd.api+json"}
@@ -20,6 +21,7 @@ def get_dois(prefix):
     response = requests.get(url, headers=headers)
     print('Writing to file...')
     fh2.write(response.text)
+    print('Created file: ' + json)
 
 def main():
     try:
