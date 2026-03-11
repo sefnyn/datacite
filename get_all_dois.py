@@ -16,7 +16,8 @@ def get_dois(prefix):
     print('Created file: ' + csv)
     with open(csv) as fp:
         count = sum(1 for line in fp)
-    print('Total Lines: ' + count)
+    print('Total Lines:', count)
+    print('N.B.: First line of file contains field names')
     
     #get json data
     headers = {"accept": "application/vnd.api+json"}
