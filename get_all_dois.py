@@ -14,7 +14,10 @@ def get_dois(prefix):
     print('Writing to file...')
     fh1.write(response.text)
     print('Created file: ' + csv)
-
+    with open(csv) as fp:
+        count = sum(1 for line in fp)
+    print('Total Lines: ' + count)
+    
     #get json data
     headers = {"accept": "application/vnd.api+json"}
     print('Getting JSON metadata from DataCite...')
