@@ -3,6 +3,7 @@
 ## get_all_dois.py [PREFIX]
 This script retrieves all, findable DOIs with prefix *PREFIX* and exports the results in CSV format.  It also restrieves the corresponding JSON data.
 
+> source ./bin/activate   # activate virtual environment  
 > python3 get_all_dois.py 10.15128  
 > Getting CSV metadata from DataCite...  
 > Writing to file...  
@@ -17,7 +18,6 @@ This script retrieves all, findable DOIs with prefix *PREFIX* and exports the re
 This script calls the DataCite **production** API and retrieves all, findable DOIs with prefix *PREFIX*.  Then the JSON data is read, parsed and analysed.
 
 For example:
-> source ./bin/activate   # activate virtual environment  
 > python3 get_doi_from_json.py 10.15128  
 > Found 618 DOIs with prefix 10.15128  
 > Created new file with 608 DOIs that resolve to collections server: dois_resolve2collections.txt  
