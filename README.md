@@ -1,7 +1,7 @@
 # Manage DataCite DOIs
 
 ## get_all_dois.py [PREFIX]
-This script retrieves all, findable DOIs with prefix *PREFIX* and exports the results in CSV format.  It also restrieves the corresponding JSON data.
+This script calls the DataCite **production** API, retrieves all findable DOIs with prefix *PREFIX* and exports the results in CSV format.  It also restrieves the corresponding JSON data.
 
 > source ./bin/activate   # activate virtual environment  
 > python3 get_all_dois.py 10.15128  
