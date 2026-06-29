@@ -9,6 +9,8 @@ import test_update_landing_page
 import getpass
 
 def update_landing_pages(user, dois, lp):
+    fh1 = open('success.log', 'w')
+    fh2 = open('fail.log', 'w')
     # Get password
     pwd = getpass.getpass(prompt="Enter password for user " + user + " (N.B.: you will *not* see any input as you type): ", stream=None)
     fh = open(dois)
@@ -21,7 +23,11 @@ def update_landing_pages(user, dois, lp):
             new_lp = lp + suffix
         else:
             new_lp = lp + "/" + suffix
-        test_update_landing_page.test_update(user, pwd, doi, new_lp)
+        result = test_update_landing_page.test_update(user, pwd, doi, new_lp)
+        if result is True:
+            fh1.write(doi + "\n")
+        else:
+            fh2.write(doi + "\n")
 
 
 def main():
