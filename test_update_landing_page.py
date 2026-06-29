@@ -17,7 +17,8 @@ payload = {
 
 def test_update(user, pwd, doi, url):
     basic = HTTPBasicAuth(user, pwd)
-    rest_api = "https://api.test.datacite.org/dois/" + doi
+#    rest_api = "https://api.test.datacite.org/dois/" + doi
+    rest_api = "https://api.datacite.org/dois/" + doi 
     headers = {
         "accept" : "application/vnd.api+json",
         "content-type": "application/json",
