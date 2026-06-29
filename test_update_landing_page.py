@@ -27,10 +27,12 @@ def test_update(user, pwd, doi, url):
     try:
         d = response.json()['data']
         print("Success.  Updated landing page for DOI " + doi + " to " + url)
+        return True
     except KeyError:
         e = response.json()['errors']
         print(response.text)
         print("Did not update DOI " + doi)
+        return False
 
 def main():
     # Get password
