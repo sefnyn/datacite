@@ -32,7 +32,7 @@ def get_dois(prefix):
             other_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh2.write(rec['id'] + "," + rec['attributes']['url'] + "\n")
-    print("Found {0} DOIs with prefix {1}".format(collections_count + other_count, prefix))
+    print("Found {0} DOIs with prefix {1}".format(sufia_count + other_count, prefix))
     print("Created new file with " + str(sufia_count) + " DOIs that resolve to Sufia server: " + dois)
     print("Created new file with " + str(other_count) + " DOIs that resolve elsewhere: " + other)
 
