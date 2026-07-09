@@ -1,7 +1,7 @@
 import requests
 
 def get_dois(prefix):
-    dois = 'dois_resolve2collections.txt'
+    dois = 'dois_resolve2sufia.txt'
     fh = open(dois, 'w')
     other = 'dois_resolve_elsewhere.txt'
     fh2 = open(other, 'w')
@@ -14,22 +14,26 @@ def get_dois(prefix):
 
     #read json data
     print("Reading JSON metadata...")
-    collections_count = 0
+    sufia_count = 0
     other_count = 0
     data = response.json()['data']
     for rec in data:
         url = rec['attributes']['url']
         f = url.find('collections.durham.ac.uk')
+        g = url.find('researchdata.durham.ac.uk')
         if f > 0:
-            collections_count += 1
+            sufia_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
             fh.write(rec['id'] + "\n")
+        elif g > 0:
+            sufia_count += 1
+            fh.write(rec['id'] + "\n")            
         else:
             other_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']) + "," + rec['attributes']['url'])
             fh2.write(rec['id'] + "," + rec['attributes']['url'] + "\n")
     print("Found {0} DOIs with prefix {1}".format(collections_count + other_count, prefix))
-    print("Created new file with " + str(collections_count) + " DOIs that resolve to collections server: " + dois)
+    print("Created new file with " + str(sufia_count) + " DOIs that resolve to Sufia server: " + dois)
     print("Created new file with " + str(other_count) + " DOIs that resolve elsewhere: " + other)
 
 
