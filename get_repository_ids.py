@@ -2,9 +2,8 @@ def read(file):
   fh = open(file)
   fh2 = open('sufia_ids.txt', 'w')
   for line in fh:
-      
-
-
+      doi = line.split("/")
+      fh2.write(doi[1])
 
 def main():
     try:
