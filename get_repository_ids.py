@@ -9,7 +9,7 @@ def main():
     try:
         read(sys.argv[1])
     except IndexError:
-        print("Usage:\n", sys.argv[0], "file containing DOIs")
+        print("Usage:\n", sys.argv[0], "file_containing_DOIs")
 
 if __name__ == "__main__":
     import sys
