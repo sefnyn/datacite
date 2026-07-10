@@ -16,8 +16,8 @@ def get_dois(prefix):
 
     #read json data
     print("Reading JSON metadata...")
-    rd_count = 0
     coll_count = 0
+    rd_count = 0
     other_count = 0
     data = response.json()['data']
     for rec in data:
@@ -26,7 +26,7 @@ def get_dois(prefix):
         g = url.find('researchdata.durham.ac.uk')
         if f > 0:
             coll_count += 1
-            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
+#            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
             fh1.write(rec['id'] + "\n")
         if g > 0:
             rd_count += 1
