@@ -19,13 +19,13 @@ def get_dois(prefix):
     data = response.json()['data']
     for rec in data:
         url = rec['attributes']['url']
-        f = url.find('collections.durham.ac.uk')
+#        f = url.find('collections.durham.ac.uk')
         g = url.find('researchdata.durham.ac.uk')
-        if f > 0:
-            sufia_count += 1
+#        if f > 0:
+#            sufia_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
-            fh.write(rec['id'] + "\n")
-        elif g > 0:
+#            fh.write(rec['id'] + "\n")
+        if g > 0:
             sufia_count += 1
             fh.write(rec['id'] + "\n")            
         else:
