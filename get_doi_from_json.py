@@ -28,7 +28,7 @@ def get_dois(prefix):
             coll_count += 1
 #            print(rec['id'] + "," + str(rec['attributes']['publicationYear']))
             fh1.write(rec['id'] + "\n")
-        if g > 0:
+        elif g > 0:
             rd_count += 1
             fh2.write(rec['id'] + "\n")            
         else:
